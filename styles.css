@@ -1,0 +1,243 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Album cover with modern hover effect */
+.album-cover {
+    width: 100%;
+    height: 250px;
+    border-radius: 15px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.album-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); 
+    transition: all 0.3s ease;
+}
+
+.album-cover img:hover {
+    transform: scale(1.1); /* Image zooms in on hover */
+}
+
+/* Background with Black Gradient */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #000000 0%, #ff007f 100%); /* Black to vibrant pink gradient */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+}
+
+/* Main player container */
+.player-container {
+    width: 450px;
+    background-color: #1c1c1c; /* Dark background for player */
+    border-radius: 20px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.7);
+    padding: 25px;
+    text-align: center;
+    transition: all 0.3s ease;
+    animation: containerAnimation 3s ease-in-out infinite; /* Breathing effect */
+}
+
+.player-container:hover {
+    transform: translateY(-10px); /* Stronger floating effect */
+}
+
+/* Container animation */
+@keyframes containerAnimation {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+    100% { transform: scale(1); }
+}
+
+/* Music Visualizer */
+.music-visualizer {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    height: 20px;
+    width: 100%;
+    opacity: 0.8;
+}
+
+.visualizer-bar {
+    height: 100%;
+    background-color: #ff007f; /* Pink bars */
+    width: 10px;
+    animation: barAnimation 1s infinite alternate;
+}
+
+@keyframes barAnimation {
+    0% { height: 10px; }
+    100% { height: 30px; }
+}
+
+/* Track info text */
+.track-info p {
+    font-size: 20px;
+    font-weight: 500;
+    color: #ff007f; /* Vibrant pink for emphasis */
+    margin: 10px 0;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+    animation: fadeIn 2s ease-out;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(10px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Controls Section */
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    padding: 10px;
+    animation: controlButtonAnimation 1.5s ease-in-out infinite;
+}
+
+@keyframes controlButtonAnimation {
+    0% { opacity: 0.5; }
+    50% { opacity: 1; }
+    100% { opacity: 0.5; }
+}
+
+/* Control Buttons */
+.control-btn {
+    background: linear-gradient(135deg, #ff007f, #ff66b2); /* Pink gradient */
+    border: none;
+    color: white;
+    font-size: 24px;
+    padding: 14px 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    outline: none;
+}
+
+.control-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+}
+
+.control-btn:active {
+    transform: scale(0.95);
+}
+
+/* Progress bar */
+.progress-bar {
+    width: 100%;
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Seek bar style */
+.seek-bar {
+    width: 100%;
+    height: 8px;
+    border-radius: 5px;
+    background-color: #ff66b2; /* Light pink seek bar */
+    outline: none;
+    transition: background-color 0.3s ease;
+}
+
+.seek-bar::-webkit-slider-thumb {
+    background-color: #ff007f; /* Darker pink thumb */
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* Time display */
+.time {
+    font-size: 14px;
+    color: #ff007f; /* Vibrant pink for readability */
+    margin-top: 10px;
+}
+
+/* Volume control */
+.volume-control {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: 20px;
+    color: #ff007f;
+}
+
+#volume {
+    width: 80%;
+    appearance: none;
+    height: 8px;
+    background-color: #ff66b2; /* Pink volume slider */
+    border-radius: 5px;
+    outline: none;
+}
+
+#volume::-webkit-slider-thumb {
+    background-color: #ff007f; /* Pink thumb */
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+/* Playlist */
+.playlist {
+    margin-top: 20px;
+    color: #ff007f;
+}
+
+.playlist-item {
+    padding: 10px 15px;
+    margin: 5px 0;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.playlist-item:hover {
+    background: #ff66b2; /* Light pink hover */
+}
+
+.playlist-item.active {
+    background: #ff007f; /* Active track */
+    color: white;
+    font-weight: bold;
+}
+
+/* Favorite Button */
+#fav-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #ff007f; /* Vibrant pink button */
+    color: white;
+    border: none;
+    border-radius: 10px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#fav-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+#fav-btn:active {
+    transform: scale(0.95);
+}
